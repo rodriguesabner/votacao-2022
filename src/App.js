@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
+import api from "./services/api";
+import Home from "./pages/Home";
+import {GlobalStyles} from "./styles/GlobalStyles";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import useInterval from "./hooks/useInterval";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [candidates, setCandidates] = useState([]);
+    const [generalInfo, setGeneralInfo] = useState([]);
+
+    async function getData() {
+        const {data} = await api.get(`/br-c0001-e000545-r.json`);
+        setCandidates(data.cand);
+
+        delete data.cand;
+        setGeneralInfo(data);
+    }
+
+    useInterval(async () => {
+        await getData();
+    }, 10000);
+
+    useInterval(async () => {
+        await api.get(`/br-c0001-e000545-r.json`, {headers: {'Cache-Control': 'no-cache'}});
+    }, 60000);
+
+    return (
+        <div className="App">
+            <Header/>
+            <Home
+                candidates={candidates}
+                generalInfo={generalInfo}
+            />
+            <Footer/>
+            <GlobalStyles/>
+        </div>
+    );
 }
 
 export default App;

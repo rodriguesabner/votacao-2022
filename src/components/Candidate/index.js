@@ -1,0 +1,51 @@
+import React from 'react';
+import Avatar from "../Avatar";
+import {
+    CandidateCard,
+    CandidateInfo,
+    CandidatePartido,
+    PercentInfo,
+    Separator,
+    TopInfoCandidate,
+    WrapperInfo
+} from "./styles";
+
+const Candidate = ({candidate}) => {
+    const sanitizeCandidateName = () => {
+        const name = candidate.nm.toLowerCase();
+        return name.charAt(0).toUpperCase() + name.slice(1);
+    }
+
+    return (
+        <CandidateCard>
+            <Avatar candidateName={candidate.nm}/>
+
+            <CandidateInfo>
+                <PercentInfo>
+                    <p>
+                        {candidate.vap}%
+                    </p>
+                </PercentInfo>
+
+                <WrapperInfo>
+                    <Separator className={'candidate-color'}/>
+
+                    <TopInfoCandidate>
+                        <h2>
+                            {sanitizeCandidateName()}
+                        </h2>
+                        <p>
+                            {candidate.n}
+                        </p>
+                    </TopInfoCandidate>
+
+                    <CandidatePartido>
+                        {candidate.cc.split("-")[0]}
+                    </CandidatePartido>
+                </WrapperInfo>
+            </CandidateInfo>
+        </CandidateCard>
+    );
+};
+
+export default Candidate;
