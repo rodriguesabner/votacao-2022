@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const Layout = styled.div`
   width: 100%;
   height: 68px;
-  background-color: #3c3c94;
+  background-color: #71a974;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #000;
 `;

@@ -26,8 +26,8 @@ export const UrnasApuradas = styled.label`
   font-size: 16px;
   margin-bottom: 10px;
   margin-top: -10px;
-  background-color: #3c3c94;
-  color: #fff;
+  background-color: #bbbbbb;
+  color: #000;
   padding: 10px;
   border-radius: 4px;
 `
