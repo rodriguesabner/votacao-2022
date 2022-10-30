@@ -10,10 +10,6 @@ const Home = ({candidates, generalInfo}) => {
     return (
         <Layout>
             <Header>
-                <UrnasApuradas>
-                    Urnas apuradas: {generalInfo.pst}%
-                </UrnasApuradas>
-
                 <p>
                     Acompanhe em tempo real.
                 </p>
@@ -28,6 +24,10 @@ const Home = ({candidates, generalInfo}) => {
                     <Candidate key={candidate.nm} candidate={candidate}/>
                 ))}
             </CandidatesList>
+
+            <UrnasApuradas>
+                Urnas apuradas: {generalInfo.pst}%
+            </UrnasApuradas>
         </Layout>
     );
 };

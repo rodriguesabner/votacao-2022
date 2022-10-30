@@ -24,10 +24,10 @@ export const Header = styled.header`
 export const UrnasApuradas = styled.label`
   font-weight: 500;
   font-size: 16px;
-  margin-bottom: 10px;
-  margin-top: -10px;
-  background-color: #bbbbbb;
-  color: #000;
+  margin-bottom: -1em;
+  margin-top: 1em;
+  background-color: #47864b;
+  color: #fff;
   padding: 10px;
   border-radius: 4px;
 `
