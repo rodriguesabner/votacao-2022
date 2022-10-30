@@ -11,7 +11,9 @@ function App() {
     const [generalInfo, setGeneralInfo] = useState([]);
 
     async function getData() {
-        const {data} = await api.get(`/br-c0001-e000545-r.json`);
+        const {data} = await api.get(`/br-c0001-e000545-r.json`, {
+            withCredentials: false,
+        });
         setCandidates(data.cand);
 
         delete data.cand;
