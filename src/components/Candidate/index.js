@@ -16,14 +16,20 @@ const Candidate = ({candidate}) => {
         return name.charAt(0).toUpperCase() + name.slice(1);
     }
 
+    let result = Math.round(candidate.vap*100)/100;
+
     return (
         <CandidateCard>
             <Avatar candidateName={candidate.nm}/>
 
             <CandidateInfo>
                 <PercentInfo>
+                    <h2>
+                        {candidate.pvap}%
+                    </h2>
+
                     <p>
-                        {candidate.vap}%
+                        {result.toLocaleString("pt-BR")} votos
                     </p>
                 </PercentInfo>
 

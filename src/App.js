@@ -22,10 +22,6 @@ function App() {
         await getData();
     }, 10000);
 
-    useInterval(async () => {
-        await api.get(`/br-c0001-e000545-r.json`, {headers: {'Cache-Control': 'no-cache'}});
-    }, 60000);
-
     return (
         <div className="App">
             <Header/>

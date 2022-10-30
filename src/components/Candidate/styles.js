@@ -11,7 +11,7 @@ export const CandidateCard = styled.li`
 
   :first-child {
     .candidate-color {
-      background-color: #ad4343;
+      background-color: #3f3f3f;
     }
 
     :hover {
@@ -25,7 +25,7 @@ export const CandidateCard = styled.li`
     transition-duration: 200ms;
 
     .candidate-color {
-      background-color: #439143;
+      background-color: #3f3f3f;
     }
 
     :hover {
@@ -54,6 +54,10 @@ export const CandidateInfo = styled.div`
   transition-duration: 0.3s;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 4px;
+  
+  :hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
 `
 
 export const PercentInfo = styled.div`
@@ -64,9 +68,13 @@ export const PercentInfo = styled.div`
   pointer-events: none;
 
   p {
-    color: #fff;
+    color: #ddd;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
+  }
+  
+  h2 {
+    color: #fff;
   }
 `
 
