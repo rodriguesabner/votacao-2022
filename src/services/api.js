@@ -5,13 +5,13 @@ const api = axios.create({
 });
 
 api.interceptors.request.use(async config => {
-    config.headers['Access-Control-Allow-Origin'] = '*';
-    config.headers['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE,PATCH,OPTIONS';
-    config.headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization';
+    // config.headers['Access-Control-Allow-Origin'] = '*';
+    // config.headers['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE,PATCH,OPTIONS';
+    // config.headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization';
     //delete cache
-    config.headers['Cache-Control'] = 'no-cache';
-    config.headers['Pragma'] = 'no-cache';
-    config.headers['Expires'] = '0';
+    // config.headers['Cache-Control'] = 'no-cache';
+    // config.headers['Pragma'] = 'no-cache';
+    // config.headers['Expires'] = '0';
 
     return config;
 });
