@@ -30,6 +30,16 @@ export const CandidateCard = styled.li`
   :hover {
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   }
+  
+  @media(max-width: 840px) {
+    width: 350px;
+    height: 400px;
+  }
+
+  @media(max-width: 768px) {
+    width: 400px;
+    height: 450px;
+  }
 `
 
 export const CandidateInfo = styled.div`
@@ -49,6 +59,16 @@ export const CandidateInfo = styled.div`
   
   :hover {
     background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  @media(max-width: 840px) {
+    width: 350px;
+    height: 400px;
+  }
+
+  @media(max-width: 768px) {
+    width: 400px;
+    height: 450px;
   }
 `
 
