@@ -10,10 +10,6 @@ export const CandidateCard = styled.li`
   cursor: pointer;
 
   :first-child {
-    .candidate-color {
-      background-color: #3f3f3f;
-    }
-
     :hover {
       .candidate-color {
         width: 100%;
@@ -23,10 +19,6 @@ export const CandidateCard = styled.li`
 
   :last-child {
     transition-duration: 200ms;
-
-    .candidate-color {
-      background-color: #3f3f3f;
-    }
 
     :hover {
       .candidate-color {
@@ -86,6 +78,7 @@ export const Separator = styled.div`
   margin-right: auto;
   border-radius: 4px;
   transition: all 0.4s ease 0s;
+  background-color: ${props => props.background};
 `
 
 export const WrapperInfo = styled.div`

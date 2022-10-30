@@ -34,7 +34,10 @@ const Candidate = ({candidate}) => {
                 </PercentInfo>
 
                 <WrapperInfo>
-                    <Separator className={'candidate-color'}/>
+                    <Separator
+                        className={'candidate-color'}
+                        background={candidate.nm.includes("LULA") ? '#ad4343' : '#439143'}
+                    />
 
                     <TopInfoCandidate>
                         <h2>

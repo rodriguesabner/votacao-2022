@@ -20,7 +20,7 @@ function App() {
 
     useInterval(async () => {
         await getData();
-    }, 10000);
+    }, 15000);
 
     return (
         <div className="App">
