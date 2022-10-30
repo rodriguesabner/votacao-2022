@@ -10,6 +10,17 @@ function App() {
     const [candidates, setCandidates] = useState([]);
     const [generalInfo, setGeneralInfo] = useState([]);
 
+    async function emptyCache() {
+        await api.get(`/br-c0001-e000545-r.json`, {
+            //disable cache
+            headers: {
+                "Cache-Control": "no-cache",
+                Pragma: "no-cache",
+                Expires: "0",
+            }
+        });
+    }
+
     async function getData() {
         const {data} = await api.get(`/br-c0001-e000545-r.json`);
         setCandidates(data.cand);
@@ -21,6 +32,10 @@ function App() {
     useInterval(async () => {
         await getData();
     }, 15000);
+
+    useInterval(async () => {
+        emptyCache();
+    }, 10000);
 
     return (
         <div className="App">

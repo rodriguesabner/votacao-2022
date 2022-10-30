@@ -21,6 +21,17 @@ export const Header = styled.header`
   }
 `
 
+export const UrnasApuradas = styled.label`
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-top: -10px;
+  background-color: #3c3c94;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+`
+
 export const LastUpdateAt = styled.label`
   font-weight: 500;
   font-size: 14px;
@@ -35,8 +46,8 @@ export const CandidatesList = styled.ul`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  
-  @media(max-width: 768px) {
+
+  @media (max-width: 768px) {
     flex-direction: column;
   }
 `

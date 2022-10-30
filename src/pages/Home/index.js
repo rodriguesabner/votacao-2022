@@ -2,7 +2,7 @@ import React from 'react';
 import {
     CandidatesList,
     Header, LastUpdateAt,
-    Layout,
+    Layout, UrnasApuradas,
 } from "./styles";
 import Candidate from "../../components/Candidate";
 
@@ -10,8 +10,12 @@ const Home = ({candidates, generalInfo}) => {
     return (
         <Layout>
             <Header>
+                <UrnasApuradas>
+                    Urnas apuradas: {generalInfo.pst}%
+                </UrnasApuradas>
+
                 <p>
-                    Acompanhe em tempo real
+                    Acompanhe em tempo real.
                 </p>
 
                 <LastUpdateAt>
