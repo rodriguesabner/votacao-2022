@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Votação 2022",
+  "name": "Consulta da votação em tempo real.",
   "icons": [
     {
       "src": "favicon.ico",
