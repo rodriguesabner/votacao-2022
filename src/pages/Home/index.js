@@ -11,17 +11,20 @@ const Home = ({candidates, generalInfo}) => {
         <Layout>
             <Header>
                 <p>
-                    Acompanhe em tempo real.
+                    Resultados das Eleições
                 </p>
 
                 <LastUpdateAt>
-                    Última atualização: {generalInfo.hg}
+                    Última atualização: {generalInfo.dt} {generalInfo.hg}
                 </LastUpdateAt>
             </Header>
 
             <CandidatesList>
                 {candidates.map(candidate => (
-                    <Candidate key={candidate.nm} candidate={candidate}/>
+                    <Candidate
+                        key={candidate.nm}
+                        candidate={candidate}
+                    />
                 ))}
             </CandidatesList>
 

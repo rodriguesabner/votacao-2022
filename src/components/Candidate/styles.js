@@ -54,7 +54,7 @@ export const CandidateInfo = styled.div`
   display: flex;
   align-items: flex-end;
   transition-duration: 0.3s;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 4px;
   
   :hover {

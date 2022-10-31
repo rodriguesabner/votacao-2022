@@ -1,28 +1,29 @@
-import {useState} from "react";
-import api from "./services/api";
+import {useEffect, useState} from "react";
 import Home from "./pages/Home";
 import {GlobalStyles} from "./styles/GlobalStyles";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import useInterval from "./hooks/useInterval";
+import {resultEletions2022} from "./mock/result";
 
 function App() {
     const [candidates, setCandidates] = useState([]);
     const [generalInfo, setGeneralInfo] = useState([]);
 
-    async function getData() {
-        const {data} = await api.get(`/br-c0001-e000545-r.json`, {
-            withCredentials: false,
-        });
-        setCandidates(data.cand);
+    useEffect(() => {
+        function getData() {
+            const data = resultEletions2022;
+            setCandidates(data.cand);
+            setGeneralInfo(data);
+        }
 
-        delete data.cand;
-        setGeneralInfo(data);
-    }
+        getData();
 
-    useInterval(async () => {
-        await getData();
-    }, 5000);
+        return () => {
+            setCandidates([]);
+            setGeneralInfo([]);
+        };
+    }, []);
+
 
     return (
         <div className="App">

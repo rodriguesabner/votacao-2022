@@ -16,7 +16,7 @@ const Candidate = ({candidate}) => {
         return name.charAt(0).toUpperCase() + name.slice(1);
     }
 
-    let result = Math.round(candidate.vap*100)/100;
+    const result = Math.round(candidate.vap * 100) / 100;
 
     return (
         <CandidateCard>
